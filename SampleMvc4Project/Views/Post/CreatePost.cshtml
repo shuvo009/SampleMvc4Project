@@ -1,0 +1,26 @@
+﻿@model SampleMvc4Project.Entitys.Post
+
+@{
+    ViewBag.Title = "Create Past";
+}
+
+<h2>Create Past</h2>
+
+<fieldset>
+    <legend>Post</legend>
+    @using(Html.BeginForm()){
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div>
+            @Html.LabelFor(x=>x.Title)
+            @Html.TextBoxFor(x=>x.Title)
+        </div>
+        <div>
+            @Html.LabelFor(x=>x.Content)
+            @Html.TextAreaFor(x=>x.Content)
+        </div>
+        @Html.Hidden("id",(object)ViewBag.id)
+        <input type="submit" value="Create"/>
+    }
+</fieldset>

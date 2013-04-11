@@ -1,0 +1,21 @@
+﻿@model Comment
+
+@{
+    ViewBag.Title = "Add Comment";
+}
+
+<h2>Add Comment</h2>
+
+<fieldset>
+    <legend>Add Comment</legend>
+    @using(@Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.LabelFor(x=>x.Content)
+            @Html.TextAreaFor(x=>x.Content)
+        </div>
+        @Html.Hidden("id",(object)ViewBag.id)
+        <input type="submit" value="Comment"/>
+    }
+</fieldset>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SampleMvc4Project.Entitys.Blog>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home</h2>
+
+<div>
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>Name</td>
+            <td>Posts</td>
+            <td>Delete</td>
+            <td>Update</td>
+        </tr>
+        @foreach(var blog in Model)
+        {
+            <tr>
+                <td>@blog.Title</td>
+                <td>@blog.BloggerName</td>
+                <td>@Html.ActionLink("Blogs","ViewAllPost","Post",new {@id=blog.Id},null)</td>
+                <td>@Html.ActionLink("Delete","DeleteBlog","Blog", new {@id= blog.Id},null)</td>
+                <td>@Html.ActionLink("Edit","EditBlog","Blog", new {@id= blog.Id},null)</td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,22 @@
+﻿@model SampleMvc4Project.Entitys.Blog
+
+@{
+    ViewBag.Title = "Delete Blog";
+}
+
+<h2>Delete Blog</h2>
+
+<fieldset>
+    <legend>Blog</legend>
+    <div>
+        <span>@Html.LabelFor(x=>x.Title)</span>
+        <div>
+            <span>@Html.LabelFor(x=>x.BloggerName)</span>
+        </div>
+        <form action="/Blog/DeleteBlog" method="post">
+        @Html.Hidden("id",(object)ViewBag.id )
+        <input type="submit" value="Delete"/>            
+        </form>
+
+    </div>
+</fieldset>

@@ -1,0 +1,17 @@
+﻿@model Comment
+
+@{
+    ViewBag.Title = "Delete Comment";
+}
+
+<h2>Delete Comment</h2>
+
+<div>
+    @Html.DisplayFor(x=>x.Content)
+</div>
+
+<form action="\Comment\DeleteComment" method="POST">
+    @Html.Hidden("postId",Model.PostId)
+    @Html.Hidden("id",Model.Id)
+    <input type="submit" value="Delete"/>
+</form>

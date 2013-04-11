@@ -1,0 +1,24 @@
+﻿@model Post
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<fieldset>
+    <legend>Delete Post</legend>
+    <div>
+        @Html.LabelFor(x=>x.Title)
+        @Html.DisplayFor(x=>x.Title)
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.Content)
+        @Html.DisplayFor(x=>x.Content)
+    </div>
+    <form method="POST"  action="/Post/DeletePost">
+        @Html.Hidden("id",Model.Id)
+        @Html.Hidden("blogId",Model.BlogId)
+        <input type="submit" value="Delete"/>
+    </form>
+</fieldset>

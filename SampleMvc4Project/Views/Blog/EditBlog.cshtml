@@ -1,0 +1,24 @@
+﻿@model Blog
+
+@{
+    ViewBag.Title = "Edit Blog";
+}
+
+<h2>Edit Blog</h2>
+<fieldset>
+    <legend>Update Blog</legend>
+    @using(Html.BeginForm()){
+        @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.LabelFor(x=>x.Title)
+            @Html.TextBoxFor(x=>x.Title)
+        </div>
+        <div>
+            @Html.LabelFor(x=>x.BloggerName)
+            @Html.TextBoxFor(x=>x.BloggerName)
+        </div>
+        @Html.HiddenFor(x => x.Id);
+        <input type="submit" value="Update"/>
+    }
+</fieldset>

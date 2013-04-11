@@ -1,0 +1,31 @@
+﻿@model Post
+
+@{
+    ViewBag.Title = "Edit Post";
+}
+
+<h2>Edit Post</h2>
+
+<fieldset>
+    <legend>Edit Post</legend>
+    @using(Html.BeginForm()){
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.LabelFor(x=>x.Title)
+            @Html.TextBoxFor(x=>x.Title)
+        </div>
+        <div>
+            @Html.LabelFor(x=>x.DateCreate)
+            @Html.DisplayFor(x=>x.DateCreate)
+            
+        </div>
+        <div>
+            @Html.LabelFor(x=>x.Content)
+            @Html.TextAreaFor(x=>x.Content)
+        </div>
+        @Html.HiddenFor(x=>x.Id)
+        @Html.HiddenFor(x=>x.DateCreate)
+        @Html.HiddenFor(x=>x.BlogId)
+        <input type="submit" value="Update"/>
+    }
+</fieldset>

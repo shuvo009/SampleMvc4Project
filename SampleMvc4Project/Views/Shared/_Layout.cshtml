@@ -1,0 +1,22 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width" />
+        <title>Blog</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Home","Index","Blog")</li>
+                    <li>@Html.ActionLink("Add","Create","Blog")</li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            @RenderBody()
+        </div>
+    </body>
+</html>

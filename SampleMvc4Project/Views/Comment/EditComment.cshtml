@@ -1,0 +1,21 @@
+﻿@model Comment
+
+@{
+    ViewBag.Title = "Edit Comment";
+}
+
+<h2>Edit Comment</h2>
+<fieldset>
+    <legend>Edit Comment</legend>
+    @using(Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.LabelFor(x=>x.Content)
+            @Html.TextAreaFor(x=>x.Content)
+        </div>
+        @Html.HiddenFor(x=>x.PostId)
+        @Html.HiddenFor(x=>x.DateCreate)
+        <input type="submit" value="Update"/>
+    }
+</fieldset>

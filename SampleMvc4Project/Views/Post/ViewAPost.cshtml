@@ -1,0 +1,30 @@
+﻿@model SampleMvc4Project.Entitys.Post
+
+@{
+    ViewBag.Title = "View Post";
+}
+
+<h2>View Post</h2>
+
+<fieldset>
+    <legend>@Model.Title</legend>
+    <div>
+        <span>@Model.Content</span>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Comment</legend>
+    <div>
+        @foreach(var comment in Model.Comments)
+        {
+            <span>@comment.Content</span>
+            <div>
+                @Html.ActionLink("Edit","EditComment","Comment",new{comment.Id},null)
+                @Html.ActionLink("Delete","DeleteComment","Comment", new {comment.Id},null)
+            </div>
+        }
+    </div>
+</fieldset>
+
+<h1>@Html.ActionLink("Add Comment","CreateComment","Comment",new{@id= Model.Id},null)</h1>
